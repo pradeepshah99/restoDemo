@@ -1,1 +1,36 @@
-<p>profile works!</p>
+<app-header>
+</app-header>
+<table *ngIf="userDetails" class="table bg-light ">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">User Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>First Name:</td>
+            <td>{{userDetails.fullName}}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{userDetails.email}}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{userDetails.address}}</td>
+        </tr>
+        <tr>
+            <td>PhoneNumber:</td>
+            <td>{{userDetails.phone}}</td>
+        </tr>
+        <tr>
+            <td class="text-center">
+                <input type="button" class="btn btn-success" (click)="onLogout()" value="Logout" />
+            </td>
+
+            <td class="text-center">
+                <input type="button" class="btn btn-primary" (click)="onEdit()" value="edit-Profile" [routerLink]="['/updateProfile']" [queryParams]="{id :userDetails._id}" />
+            </td>
+        </tr>
+    </tbody>
+</table>

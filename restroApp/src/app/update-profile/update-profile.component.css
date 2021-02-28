@@ -1,0 +1,15 @@
+.row {
+    background-color: #fff;
+    margin: 10px auto 0;
+    border-top: 5px solid #f08902;
+}
+
+.btn {
+    background-color: #f08902;
+}
+
+.text {
+    text-align: center;
+    color: #f08902;
+    margin-top: 20px;
+}

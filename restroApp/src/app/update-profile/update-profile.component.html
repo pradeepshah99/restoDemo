@@ -1,0 +1,52 @@
+<app-header>
+</app-header>
+<div class="container">
+    <h3 class="text">Update your Profile</h3>
+    <div class="row">
+
+        <div class="col-md-6 offset-md-3 bg-light">
+            <form [formGroup]="editForm">
+                <div class="form-group">
+                    <i class="fa fa-user lock"></i> fullName:
+                    <input type="text" class="form-control" formControlName='fullName' placeholder="Name">
+                    <span class="text-danger" *ngIf="editForm.get('fullName').invalid">
+                    *Please enter your Name.</span>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-envelope email"></i> Email:
+                    <input type="email" class="form-control" formControlName='email' placeholder="email">
+                    <span class="text-danger" *ngIf="editForm.get('email').invalid">
+                    *Please enter emailid.</span>
+
+                </div>
+
+                <div class="form-group" *ngIf="!isEdit">
+                    <i class="fa fa-lock lock"></i> Password:
+                    <input type="text" class="form-control" formControlName='password' placeholder="password" minlength="4">
+                    <span class="text-danger" *ngIf="editForm.get('password').invalid">
+                    *Please enter password.</span>
+                    <span class="text-danger" *ngIf="editForm.get('password').errors?.minlength">password must be 4 characters</span>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-home address"></i> Address: <input type="text" class="form-control" formControlName='address' placeholder="address..">
+                    <span class="text-danger" *ngIf="editForm.get('address').invalid">
+                    *Please enter your address.</span>
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-phone Phone"></i> PhoneNumber:
+                    <input type="text" class="form-control" formControlName='phone' placeholder="**********">
+                    <span class="text-danger" *ngIf="editForm.get('phone').invalid">
+                    *Please enter PhoneNumber.</span>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success" (click)="onSubmit()">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

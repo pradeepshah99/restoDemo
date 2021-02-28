@@ -8,10 +8,15 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthInterceptor } from './auth.interceptor';
+import { AuthGuard } from './auth.guard';
+import { MyrestroService } from './myrestro.service';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     SignupComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { ProfileComponent } from './profile/profile.component';
      
     })
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}, AuthGuard, MyrestroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

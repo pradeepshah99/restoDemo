@@ -1,0 +1,21 @@
+.bg-color {
+    background-color: #0f0f0ffb;
+}
+
+.navbar-brand {
+    color: #f8aa02;
+}
+
+.nav-link {
+    /* font-weight: bold; */
+    color: #f8aa02;
+    font-size: 20px;
+}
+
+.btn-group {
+    color: #f8aa02;
+}
+
+.navbar-toggler i {
+    color: #f8aa02;
+}

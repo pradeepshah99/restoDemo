@@ -13,6 +13,10 @@ export class MyrestroService {
     return this.http.post("http://localhost:5000/api/login",data);
   }
 
+  getUserProfile(){
+    return this.http.get("http://localhost:5000/api/profile");
+  }
+
   setToken(token){
     localStorage.setItem('token',token);
   }
@@ -35,7 +39,16 @@ export class MyrestroService {
       return null;
   }
 
+  updateUser(id,data){
+    return this.http.put("http://localhost:5000/api/updateProfile/"+id ,data);
+  }
+
   getToken(){
     return localStorage.getItem('token');
   }
+  
+  deleteToken(){
+    localStorage.removeItem('token')
+  }
+  
 }

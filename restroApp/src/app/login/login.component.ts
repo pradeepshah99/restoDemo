@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MyrestroService } from '../myrestro.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,13 +30,13 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.service.loginUser(this.loginForm.value).subscribe(
       res=>{
-        // this.service.setToken(res['token']);
-        // this.loginForm.reset();
-        this.toastr.success("login success!")
+        this.service.setToken(res['token']);
+        this.loginForm.reset();
+       this.toastr.success("login")
         this.router.navigate(['/profile'])
       },error=>{
         this.toastr.error("you are not registered!")
-        this.router.navigate(['/login'])
+        this.router.navigate(['/signup'])
       }
     )
   }

@@ -7,6 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,18 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule,BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      progressBar:true,
+      positionClass: 'toast-top-center',
+      progressAnimation:"increasing",
+     
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

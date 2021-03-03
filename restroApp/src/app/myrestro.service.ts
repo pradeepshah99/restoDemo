@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpParams} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -17,9 +18,15 @@ export class MyrestroService {
     return this.http.get("http://localhost:5000/api/profile");
   }
 
+  userRegister(body:any):Observable<any>{
+    return this.http.post('http://localhost:5000/api/register' ,body)
+  }
+
   setToken(token){
     localStorage.setItem('token',token);
   }
+
+  
 
   isLoggedIn(){
     var userPayload=this.getUserPayload();

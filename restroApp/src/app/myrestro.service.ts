@@ -22,6 +22,14 @@ export class MyrestroService {
     return this.http.post('http://localhost:5000/api/register' ,body)
   }
 
+  addProduct(body:any): Observable<any>{
+    return this.http.post('http://localhost:5000/api/createProduct', body)
+  }
+
+  getProduct(): Observable<any>{
+    return this.http.get('http://localhost:5000/api/getAllProducts')
+  }
+
   setToken(token){
     localStorage.setItem('token',token);
   }

@@ -16,6 +16,8 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuard } from './auth.guard';
 import { MyrestroService } from './myrestro.service';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     SignupComponent,
     HeaderComponent,
     ProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ProductsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

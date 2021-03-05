@@ -1,0 +1,44 @@
+<app-header>
+
+</app-header>
+
+<div class="card ml-auto ">
+    <button class="card-header btn btn-success textcolor " routerLink="/products">
+        Add New Products
+    </button>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <!-- <th scope="col">Product ID</th> -->
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Description</th>
+            <th scope="col">Product Price</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Action</th>
+
+        </tr>
+    </thead>
+
+
+    <tr *ngFor="let product of products">
+        <!-- <td>{{product._id | json}}</td> -->
+        <td>{{product.title | json}}</td>
+        <td>{{product.description | json}}</td>
+        <td>{{product.price | json}}</td>
+        <!-- <td>{{product.obj_id | json}}</td> -->
+        <td>{{product.company | json}}</td>
+        <td> <button type="submit" class="btn btn-danger" (click)='onDeleteProduct(product._id)'>Delete</button> &nbsp;
+            <button class="btn btn-success" (click)="editProduct(product)">Edit</button>
+        </td>
+
+
+
+        <!-- <td>{{user.password | json}}</td> -->
+
+
+    </tr>
+
+
+</table>

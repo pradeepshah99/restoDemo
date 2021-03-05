@@ -18,6 +18,7 @@ import { MyrestroService } from './myrestro.service';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductListComponent } from './product-list/product-list.component';
     ProfileComponent,
     UpdateProfileComponent,
     ProductsComponent,
-    ProductListComponent
+    ProductListComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

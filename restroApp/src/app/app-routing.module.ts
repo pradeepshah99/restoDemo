@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
+import { EditProductComponent } from './edit-product/edit-product.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path:"profile",component:ProfileComponent, canActivate:[AuthGuard]},
   {path: "updateProfile", component:UpdateProfileComponent, canActivate:[AuthGuard]},
   {path: "products", component:ProductsComponent, canActivate:[AuthGuard]},
-  {path: "productList", component:ProductListComponent, canActivate:[AuthGuard]}
+  {path: "productList", component:ProductListComponent, canActivate:[AuthGuard]},
+  {path: "editProduct/:id", component:EditProductComponent, canActivate:[AuthGuard]},
+
 
 
  

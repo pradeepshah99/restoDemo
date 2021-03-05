@@ -30,6 +30,15 @@ export class MyrestroService {
     return this.http.get('http://localhost:5000/api/getAllProducts')
   }
 
+  deleteProduct(id:any):Observable<any>
+  {
+ return this.http.delete('http://localhost:5000/api/deleteproducts/'+id)
+  }
+  putProduct(id, body): Observable<any>{
+    return this.http.put('http://localhost:5000/api/updateProducts/'+id, body)
+  
+  }
+
   setToken(token){
     localStorage.setItem('token',token);
   }
